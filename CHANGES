@@ -1,0 +1,19 @@
+Version 0.2.8 - released 2009-05-27; changes from 0.2.7
+ * remove default passing of 'source=hs-twitter' argument to
+   all API actions. The default argument list is now empty.
+   If you want to configure the 'source=' argument, now use
+
+           Web.Twitter.Monad.fromSource :: String -> TM a -> TM a
+           Web.Twitter.Monad.getSource :: String -> TM (Maybe String)
+
+   (Passing in source= to the search APIs causes problems.)
+
+Version 0.2.6/0.2.7 - released 2009-05-20; changes from 0.2.4
+ * Added social graph API additions (getUserFollowers / getUserFollowing )
+ * support for default arguments via Web.Twitter.Monad.getDefArgs / withDefaultArgs
+
+Version 0.2.5 - released 2009-02-05; changes from 0.2.4
+
+ * Fix bug in percent-encoding UTF-8 content. 
+   (Bug reported by Ilya Kuznetsov; thanks.)
+
